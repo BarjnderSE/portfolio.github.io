@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Blog page for Barjinder Singh's portfolio" />
+    <meta name="author" content="Barjinder Singh" />
+    <title>Blog | Barjinder Singh Portfolio</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .navbar-brand {
+            color: #007bff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #6c757d;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #e9ecef;
+            padding: 40px 0;
+        }
+
+        header .display-4 {
+            color: #343a40;
+        }
+
+        header .lead {
+            color: #6c757d;
+        }
+
+        /* Blog Post Form Styles */
+        #blog-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #blog-form .form-label {
+            color: #343a40;
+        }
+
+        #blog-form .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        #blog-form .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        /* Blog Post Styles */
+        article {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        article h2 {
+            color: #343a40;
+        }
+
+        article p {
+            color: #495057;
+        }
+
+        article a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        article a:hover {
+            text-decoration: underline;
+        }
+
+        article .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        article .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        /* Sidebar Styles */
+        .bg-light {
+            background-color: #f8f9fa !important;
+        }
+
+        .bg-light p {
+            color: #495057;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        footer .text-muted {
+            color: #6c757d;
+        }
+
+        footer .list-inline-item a {
+            color: #6c757d;
+        }
+
+        footer .list-inline-item a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Barjinder Portfolio</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5 bg-light">
+            <div class="container px-5">
+                <h1 class="display-4 fw-bolder">Blog</h1>
+                <p class="lead fw-normal text-muted">Insights and updates from Barjinder Singh.</p>
+            </div>
+        </header>
+        <!-- Blog Posts -->
+        <section class="py-5">
+            <div class="container px-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Blog Post Form -->
+                        <div class="mb-5">
+                            <h2 class="fw-bolder">Post a New Blog</h2>
+                            <form id="blog-form" action="submit_blog.php" method="POST" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="date" name="date" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="content" class="form-label">Content</label>
+                                    <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tags" class="form-label">Tags (comma separated)</label>
+                                    <input type="text" class="form-control" id="tags" name="tags" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Upload Screenshot</label>
+                                    <input type="file" class="form-control" id="image" name="image" />
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+
+                        <!-- Display Blog Posts -->
+                      
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Sidebar -->
+                        <div class="bg-light p-4 rounded">
+                            <h3 class="fw-bolder">About Me</h3>
+                            <p>My Journey</
