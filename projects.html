@@ -43,6 +43,11 @@
                 <button class="btn btn-outline-primary tag-filter" data-filter="excel">Excel</button>
                 <button class="btn btn-outline-primary tag-filter" data-filter="tableau">Tableau</button>
                 <button class="btn btn-outline-primary tag-filter" data-filter="power-bi">Power BI</button>
+                <button class="btn btn-outline-primary tag-filter" data-filter="power-bi">Power BI</button>
+                <button class="btn btn-outline-primary tag-filter" data-filter="dataanalyst">Data Analyst/Bi Developer Projects</button>
+                
+                <button class="btn btn-outline-primary tag-filter" data-filter="datascience">Data Science</button>
+                
                 <!-- <button class="btn btn-outline-primary tag-filter" data-filter="sql">SQL</button> -->
                 <!-- <button class="btn btn-outline-primary tag-filter" data-filter="python">Python</button> -->
             </div>
@@ -78,12 +83,28 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const projects = [
+             {
+                name: 'Data Analyst/BI Developer Projects',
+                description: 'Data/BI Projects.',
+                skills: ['dataanalyst'],
+                image: 'Dataprof1.png'
+            },
+            
+                {
+  "name": "Data Science Projects",
+  "description": "Data Science Projects.",
+  "skills": ["datascience"],
+  "image": "/Dataprof1.png",
+  "github": "https://github.com/BarjnderSE/Data-science.git"
+
+
+            },
             {
                 name: 'Data Professional Survey',
                 description: 'Complete Survey of Data Professionals.',
                 skills: ['power-bi'],
                 image: 'powerbiassets/Dataprof1.png'
-            },
+            },  "github":"https://github.com/BarjnderSE/Software-Engineer-Data-Insights.git"
             {
                 name: 'MJ Enterprise Dashboard',
                 description: 'MJ Enterprise Dashboard.',
