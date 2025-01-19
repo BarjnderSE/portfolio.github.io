@@ -6,208 +6,299 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Projects</title>
-    <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Custom Google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-    <!-- Bootstrap icons-->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;400;600;900&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-</head>
-<body class="d-flex flex-column h-100 bg-light">
-<main class="flex-shrink-0">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-        <div class="container px-5">
-            <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Projects</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="py-5">
-        <div class="container px-5 mb-5">
-            <!-- Tags for filtering -->
-            <div class="text-center mb-5">
-                <button class="btn btn-outline-primary tag-filter" data-filter="all">All</button>
-                <button class="btn btn-outline-primary tag-filter" data-filter="excel">Excel</button>
-                <button class="btn btn-outline-primary tag-filter" data-filter="tableau">Tableau</button>
-                <button class="btn btn-outline-primary tag-filter" data-filter="power-bi">Power BI</button>
-                <button class="btn btn-outline-primary tag-filter" data-filter="power-bi">Power BI</button>
-                <button class="btn btn-outline-primary tag-filter" data-filter="dataanalyst">Data Analyst/Bi Developer Projects</button>
-                
-                <button class="btn btn-outline-primary tag-filter" data-filter="datascience">Data Science</button>
-                
-                <!-- <button class="btn btn-outline-primary tag-filter" data-filter="sql">SQL</button> -->
-                <!-- <button class="btn btn-outline-primary tag-filter" data-filter="python">Python</button> -->
-            </div>
-
-            <!-- Projects Section -->
-            <div class="text-center mb-5">
-                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
-            </div>
-            <div class="row gx-5 justify-content-center" id="project-cards">
-                <!-- Project Cards will be dynamically added here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal for project details -->
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <img src="" id="modalProjectImage" class="img-fluid rounded-top" alt="Project Image">
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const projects = [
-             {
-                name: 'Data Analyst/BI Developer Projects',
-                description: 'Data/BI Projects.',
-                skills: ['dataanalyst'],
-                image: 'Dataprof1.png'
-            },
-            
-                {
-  "name": "Data Science Projects",
-  "description": "Data Science Projects.",
-  "skills": ["datascience"],
-  "image": "/Dataprof1.png",
-  "github": "https://github.com/BarjnderSE/Data-science.git"
-
-
-            },
-            {
-                name: 'Data Professional Survey',
-                description: 'Complete Survey of Data Professionals.',
-                skills: ['power-bi'],
-                image: 'powerbiassets/Dataprof1.png'
-            },  "github":"https://github.com/BarjnderSE/Software-Engineer-Data-Insights.git"
-            {
-                name: 'MJ Enterprise Dashboard',
-                description: 'MJ Enterprise Dashboard.',
-                skills: ['power-bi'],
-                image: 'powerbiassets/pb2.png'
-            },
-            {
-                name: 'Super Store Analysis',
-                description: 'Survey .',
-                skills: ['power-bi'],
-                image: 'powerbiassets/ss.png'
-            },
-            {
-                name: 'Airbnb Analysis',
-                description: 'Airbnb.',
-                skills: ['tableau'],
-                image: 'assets/TableauAirbnb-Project.png'
-            },
-            {
-                name: 'Variety Store',
-                description: 'Variety',
-                skills: ['excel'],
-                image: 'assets/variety.png'
-            },
-            
-            {
-                 name: 'Pizza Store Sales Analysis',
-                 description: 'Pizza Sales Dashboard.',
-                 skills: ['excel'],
-                 image: 'assets/Pizza store analysis.png'
-             },
-           
-           
-           
-            // Add more projects as needed
-        ];
-
-        const projectCardsContainer = document.getElementById('project-cards');
-
-        function generateProjectCard(project) {
-            return `
-            <div class="col-lg-6 col-xl-5 col-xxl-4 mb-5 ${project.skills.join(' ')}">
-                <div class="card overflow-hidden shadow rounded-4 border-0">
-                    <img src="${project.image}" class="card-img-top" alt="${project.name}">
-                    <div class="card-body p-4">
-                        <h2 class="card-title fs-4 fw-bolder mb-2">${project.name}</h2>
-                        <p class="card-text mb-4">${project.description}</p>
-                        <button class="btn btn-primary btn-enlarge" data-bs-toggle="modal" data-bs-target="#projectModal" data-image="${project.image}">View details</button>
-                    </div>
-                </div>
-            </div>
-            `;
+    <style>
+        /* Custom Styles for Improved Layout */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f8fb; /* Light gray-blue background */
+            margin: 0;
+            padding: 0;
         }
+    
+        .navbar {
+            background: linear-gradient(90deg, #66bb6a, #81c784); /* Lighter green gradient for a professional look */
+        }
+    
+        .navbar a, .navbar-toggler-icon {
+            color: white;
+        }
+    
+        .navbar a:hover {
+            color: #ffb3b3;
+        }
+    
+        .btn-outline-primary {
+            border: 2px solid #66bb6a;
+            color: #66bb6a;
+            transition: all 0.3s ease;
+        }
+    
+        .btn-outline-primary:hover {
+            background-color: #f4f8fb;
+            color: #66bb6a;
+        }
+    
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: white; /* White background for a clean look */
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+    
+        .card:hover {
+            transform: translateY(-10px);
+        }
+    
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+    
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            height: 100%;
+            background-color: #fafafa; /* Very light gray background for the card body */
+        }
+    
+        .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333; /* Dark gray for readability */
+            margin-bottom: 15px;
+        }
+    
+        .card-text {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    
+        .btn-primary {
+            background: linear-gradient(90deg, #66bb6a, #81c784); /* Light green gradient */
+            transform: translateY(-5px);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    
+        body {
+            background: linear-gradient(90deg, #f4f8fb, #e0f2f1); /* Very light gradient for a subtle touch */
+        }
+    
+        .btn-primary:hover {
+            background-color: #66bb6a;
+        }
+    
+        .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    
+        .tag-filter {
+            border-radius: 20px;
+            margin: 5px;
+        }
+    
+        .project-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+    
+        .text-center {
+            margin-bottom: 30px;
+        }
+    
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    
+        /* Gradient Heading */
+        h1, h2, h3, h4, h5, h6 {
+            background: linear-gradient(45deg, #4caf50, #66bb6a, #81c784); /* Lighter green gradient */
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    </style>
+    
+    
+</head>
+<body class="d-flex flex-column  h-100 bg-light">
 
-        function displayProjects(filter) {
-            projectCardsContainer.innerHTML = '';
-            let projectsToShow = [];
+    <main class="flex-shrink-0">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-white">Projects</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-            // Filter projects based on tag
-            if (filter === 'all') {
-                projectsToShow = projects;
-            } else {
-                projectsToShow = projects.filter(project => project.skills.includes(filter));
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Filter Tags -->
+                <div class="text-center mb-4">
+                    <button class="btn btn-outline-primary tag-filter" data-filter="all">All</button>
+                    
+                    <button class="btn btn-outline-primary tag-filter" data-filter="sql/python">SQL/Python</button>
+                    <button class="btn btn-outline-primary tag-filter" data-filter="ml">Data Science/ML</button>
+
+                    <button class="btn btn-outline-primary tag-filter" data-filter="excel">Excel</button>
+                    <button class="btn btn-outline-primary tag-filter" data-filter="tableau">Tableau</button>
+                    <button class="btn btn-outline-primary tag-filter" data-filter="power-bi">Power BI</button>
+                   
+
+                </div>
+
+                <!-- Projects -->
+                <div class="project-card-container" id="project-cards"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = [
+    
+               
+                {
+                    name: 'Data Analyst Projects',
+                    description: 'Focused on analysis.',
+                    skills: ['sql/python'],
+                    image: 'sp.webp',
+                    githubLink: 'https://github.com/BarjnderSE/Data-Analysis-BI-Portfolio.git',
+                    detailsPage: ''
+                },
+                {
+                    name: 'Data Science Projects',
+                    description: 'Using various algorithms.',
+                    skills: ['ml'],
+                    image: 'ds1.jpg',
+                    githubLink: 'https://github.com/BarjnderSE/Data-science.git',
+                    detailsPage: ''
+                },
+                {
+                    name: 'Churn Analysis',
+                    description: 'Bank Churn Analysis.',
+                    skills: ['power-bi'],
+                    image: 'assets/churn.png',
+                    githubLink: 'https://github.com/BarjnderSE/Data-Analysis-BI-Portfolio/tree/7adcd19f7d7a74736bf4483a09887a074521e3d6/Power%20Bi%20DataBkChurn%20Analysis',
+                    detailsPage: ''  // No details page
+                },
+                {
+                    name: 'Sales Analysis',
+                    description: 'Business dashboard for Sales Insight -Dax.',
+                    skills: ['power-bi'],
+                    image: 'powerbiassets/pb2.png',
+                    githubLink: 'https://github.com/BarjnderSE/Data-Analysis-BI-Portfolio/tree/7adcd19f7d7a74736bf4483a09887a074521e3d6/Power-BI-Sales%20DAX-%20Analysis',
+                    detailsPage: ''  // No details page
+                },
+                {
+                    name: 'Super Store Analysis',
+                    description: 'Comprehensive superstore sales analysis.',
+                    skills: ['power-bi'],
+                    image: 'powerbiassets/ss.png',
+                    detailsPage: 'superstore.html',
+                    githubLink: ''  // No GitHub link
+                },
+                {
+                    name: 'Airbnb Analysis',
+                    description: 'Airbnb data insights and visualization.',
+                    skills: ['tableau'],
+                    image: 'assets/TableauAirbnb-Project.png',
+                    detailsPage: 'airbnb.html',
+                    githubLink: ''  // No GitHub link
+                },
+                {
+                    name: 'Salary Analysis',
+                    description: 'Seattle Salary data insights and visualization.',
+                    skills: ['tableau'],
+                    image: 'assets/salryt.png',
+                    detailsPage: 'salary.html',
+                    githubLink: ''  // No GitHub link
+                },
+                {
+                    name: 'Pizza Store Analysis',
+                    description: 'Pizza Store Analysis.',
+                    skills: ['excel'],
+                    image: 'assets/pizzasales.png',
+                    githubLink: 'https://github.com/BarjnderSE/Data-Analysis-BI-Portfolio/tree/7adcd19f7d7a74736bf4483a09887a074521e3d6/Excel%20Pizza%20Store%20Analysis',
+                    detailsPage: ''  // No details page
+                },
+                {
+                    name: 'Variety Store Analysis',
+                    description: 'Variety Store Analysis.',
+                    skills: ['excel'],
+                    image: 'assets/varietys.png',
+                    githubLink: 'https://github.com/BarjnderSE/Data-Analysis-BI-Portfolio/tree/7adcd19f7d7a74736bf4483a09887a074521e3d6/Excel-Variety%20Store%20Analysis',
+                    detailsPage: ''  // No details page
+                }
+              
+               
+                
+                
+        
+        
+            ];
+
+            const projectCardsContainer = document.getElementById('project-cards');
+
+            function generateProjectCard(project) {
+                const viewLink = project.detailsPage || project.githubLink;
+                return `
+                    <div class="col">
+                        <div class="card shadow-smtextborder-0">
+                            <img src="${project.image}" class="card-img-top" alt="${project.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${project.name}</h5>
+                                <p class="card-text">${project.description}</p>
+                                <a href="${viewLink}" class="btn btn-primary" target="_blank">View</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
             }
 
-            // Display filtered projects
-            projectsToShow.forEach(project => {
-                projectCardsContainer.innerHTML += generateProjectCard(project);
-            });
+            function displayProjects(filter) {
+                projectCardsContainer.innerHTML = '';
+                const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.skills.includes(filter));
+                filteredProjects.forEach(project => projectCardsContainer.innerHTML += generateProjectCard(project));
+            }
 
-            // Attach event listeners to newly created buttons
-            attachEnlargeListeners();
-        }
-
-        function attachEnlargeListeners() {
-            const enlargeButtons = document.querySelectorAll('.btn-enlarge');
-            enlargeButtons.forEach(button => {
+            document.querySelectorAll('.tag-filter').forEach(button => {
                 button.addEventListener('click', function () {
-                    const projectImage = this.getAttribute('data-image');
-                    document.getElementById('modalProjectImage').setAttribute('src', projectImage);
+                    displayProjects(this.dataset.filter);
                 });
             });
-        }
 
-        // Initial display of all projects
-        displayProjects('all');
-
-        // Event listener for tag filters
-        const tagFilters = document.querySelectorAll('.tag-filter');
-        tagFilters.forEach(tag => {
-            tag.addEventListener('click', function () {
-                const filter = this.getAttribute('data-filter');
-                displayProjects(filter);
-            });
+            displayProjects('all');
         });
-    });
-</script>
-
-<script src="js/scripts.js"></script> <!-- If you have additional scripts -->
-</body>
-</html>
-
-
-<script src="js/scripts.js"></script> <!-- If you have additional scripts -->
+    </script>
 </body>
 </html>
